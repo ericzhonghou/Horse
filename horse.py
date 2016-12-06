@@ -20,7 +20,7 @@ def open_file(n):
 def horse(g, e):
 	size = len(g)
 	results = []
-	for i in range(750):
+	for i in range(500):
 		teams = []
 		curr = random.randint(0, size-1)
 		curr_team = []
@@ -28,6 +28,9 @@ def horse(g, e):
 		while (len(seen) != size):
 			seen.append(curr)
 			curr_team.append(curr)
+			if(len(curr_team == size)):
+				teams.append(curr_team)
+				break
 			neighbors = e[curr]
 			not_seen = [x for x in neighbors if x not in seen]
 			if(len(seen) == size):
@@ -40,7 +43,11 @@ def horse(g, e):
 			else:
 				curr = not_seen[random.randint(0, (len(not_seen)-1))]
 
-		results.append(teams)
+		if(len(curr_team == size)):
+			results.append(curr_team)
+			break
+		else:		
+			results.append(teams)
 
 	best_score = -1
 
@@ -69,7 +76,7 @@ def sum_list(lst, g):
 
 def main():
 	f = open('output.out','w')
-	for i in range(5):
+	for i in range(6, 100):
 		g, e = open_file(i+1)
 		best = horse(g,e)
 		print("score: " + str(best[1]))
