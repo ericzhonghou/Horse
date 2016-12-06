@@ -72,10 +72,9 @@ def main():
 	for i in range(4):
 		g, e = open_file(i+1)
 		best = horse(g,e)
+		print("score: " + best[1])
 		f.write(best[0] + "\n")
 		
-
-
 main()
 
 # g, e = open_file(1)
