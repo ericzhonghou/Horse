@@ -28,7 +28,7 @@ def horse(g, e):
 		while (len(seen) != size):
 			seen.append(curr)
 			curr_team.append(curr)
-			if(len(curr_team == size)):
+			if(len(curr_team) == size):
 				teams.append(curr_team)
 				break
 			neighbors = e[curr]
@@ -43,7 +43,7 @@ def horse(g, e):
 			else:
 				curr = not_seen[random.randint(0, (len(not_seen)-1))]
 
-		if(len(curr_team == size)):
+		if(len(curr_team) == size):
 			results.append(curr_team)
 			break
 		else:		
