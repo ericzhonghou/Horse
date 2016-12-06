@@ -44,7 +44,7 @@ def horse(g, e):
 				curr = not_seen[random.randint(0, (len(not_seen)-1))]
 
 		if(len(curr_team) == size):
-			results.append(curr_team)
+			results.append(teams)
 			break
 		else:		
 			results.append(teams)
