@@ -76,7 +76,7 @@ def sum_list(lst, g):
 
 def main():
 	f = open('output.out','w')
-	for i in range(6, 100):
+	for i in range(5, 100):
 		g, e = open_file(i+1)
 		best = horse(g,e)
 		print("score: " + str(best[1]))
